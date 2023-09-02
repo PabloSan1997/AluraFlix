@@ -2,18 +2,20 @@ import {useRoutes, HashRouter, Navigate} from 'react-router-dom';
 import { Home } from './pages/Home';
 import { AgregarVideo } from './pages/AgregarVideo';
 import { AgregarCategoria } from './pages/AgregarCategoria';
+import { rutas } from './utilities/routes';
+import Header from './components/Header';
 
 const Rutas =()=>useRoutes([
     {
-        path:'/home',
+        path:rutas.homePage,
         element:<Home/>
     },
     {
-        path:'/addVideo',
+        path:rutas.addVideoRoute,
         element:<AgregarVideo/>
     },
     {
-        path:'/addCategory',
+        path:rutas.addCategoryRoute,
         element:<AgregarCategoria/>
     },
     {
@@ -22,14 +24,16 @@ const Rutas =()=>useRoutes([
     },
     {
         path:'/',
-        element:<Navigate to='/home'/>
+        element:<Navigate to={rutas.homePage}/>
     }
 ]);
 
 
 export function App(){
+    
     return(
         <HashRouter>
+            <Header/>
             <Rutas/>
         </HashRouter>
     );
