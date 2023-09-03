@@ -11,12 +11,17 @@ type CategoriesRes = {
     color: string,
     name: string
 }
+type CategoriaNew = {
+    description: string,
+    color: string,
+    name: string
+}
 type CategoriesRelationRes = {
     id_category: string,
     description: string,
     color: string,
     name: string,
-    videos:VideosRes[]
+    videos: VideosRes[]
 }
 type VideosRelation = {
     id_video: string,
@@ -45,7 +50,8 @@ type VideosNew = {
 
 //Context 
 type Context = {
-    actual:()=>void,
-    categoriaVideos:CategoriesRelationRes[]
+    actual: () => void,
+    categoriaVideos: CategoriesRelationRes[],
+    categorias: CategoriesRes[]
 }
 

@@ -17,4 +17,10 @@ const solicitudGet = {
         cabeza
     }
 }
-export {url_api, cabeza, solicitudGet}
+const soliditudDelete = {
+    method:'DELETE',
+    headers:{
+        cabeza
+    }
+}
+export {url_api, cabeza, solicitudGet, soliditudDelete}

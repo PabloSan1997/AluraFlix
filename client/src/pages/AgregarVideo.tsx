@@ -1,9 +1,9 @@
 import React from 'react';
-import { readCategory } from '../api/readCategory';
 import { CategoryOption } from '../components/CategoryOption';
 import { addVideoApi } from '../api/addVideoApi';
 import {useNavigate} from 'react-router-dom';
 import { rutas } from '../utilities/routes';
+import { UseContexto } from '../context';
 
 const initalState: VideosNew = {
   titulo: '',
@@ -14,9 +14,10 @@ const initalState: VideosNew = {
 }
 
 export function AgregarVideo() {
-  const [categorias, setCategorias] = React.useState<CategoriesRes[]>([]);
+  
   const [nuevoVideo, setNuevoVideo] = React.useState<VideosNew>(initalState);
   const go = useNavigate();
+  const {categorias, actual} = UseContexto();
   const cambiar = {
     titulo: (e: React.ChangeEvent<HTMLInputElement>) => setNuevoVideo({ ...nuevoVideo, titulo: e.target.value }),
     link_imagen: (e: React.ChangeEvent<HTMLInputElement>) => setNuevoVideo({ ...nuevoVideo, link_imagen: e.target.value }),
@@ -26,13 +27,7 @@ export function AgregarVideo() {
   }
 
   
-  React.useEffect(() => {
-    readCategory()
-      .then(data => setCategorias(data))
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
+
 
   const addVideo =(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
@@ -40,6 +35,7 @@ export function AgregarVideo() {
     .then(data=>{
       console.log(data);
       setNuevoVideo(initalState);
+      actual();
     })
     .catch(error=>console.error(error));
   }
