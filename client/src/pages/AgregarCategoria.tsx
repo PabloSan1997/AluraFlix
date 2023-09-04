@@ -25,6 +25,7 @@ export function AgregarCategoria() {
     .then(data=>{
       console.log(data);
       actual();
+      setNewCategory(initalState);
     })
     .catch(error=>{
       console.log(error);
@@ -33,6 +34,7 @@ export function AgregarCategoria() {
   }
   return (
     <>
+    <h2 className="titulo_formulario">Nueva Categoría</h2>
       <form className="formulario formulario-categoria" onSubmit={agregar}>
         <div className="fila">
           <label htmlFor="">Nombre</label>
@@ -40,15 +42,16 @@ export function AgregarCategoria() {
         </div>
         <div className="fila">
           <label htmlFor="">Descripcion</label>
-          <textarea className="entrada" value={newCategory.description} onChange={cambiar.description}></textarea>
+          <textarea className="entrada area-texto" value={newCategory.description} onChange={cambiar.description}></textarea>
         </div>
         <div className="fila">
           <label htmlFor="">Color</label>
-          <input type="color" className="entrada" value={newCategory.color}  onChange={cambiar.color}/>
+          <input type="color" className="entrada entrada_color" value={newCategory.color}  onChange={cambiar.color}/>
         </div>
-        <div className="area-boton">
-          <button type="submit">Guardar</button>
-          <button type="button" onClick={()=>setNewCategory(initalState)}>Limpiar</button>
+        <div className="area_botones">
+          <button type="submit" className='boton boton_azul'>Guardar</button>
+          <button type="button" className='boton boton_gris' onClick={()=>setNewCategory(initalState)}>Limpiar</button>
+          
         </div>
       </form>
       <AreaCategorias/>

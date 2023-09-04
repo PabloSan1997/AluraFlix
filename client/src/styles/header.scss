@@ -9,7 +9,7 @@ header{
     background: $negro1;
     h1{
         width: fit-content;
-        margin-left: 2%;
+        margin-left: 5%;
         img{
             transition: transform 0.2s ease;
             width: 150px;
@@ -34,6 +34,20 @@ header{
         transition: all 0.5s ease;
         &:hover{
             background: rgb(26, 25, 25);
+        }
+    }
+}
+
+@media (max-width:398px){
+    header{
+      flex-direction: column;
+      height: fit-content;
+        h1{
+           width: fit-content;
+           margin:10px auto;
+        }
+        .boton_into{
+           margin:10px auto;
         }
     }
 }

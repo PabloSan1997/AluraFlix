@@ -10,3 +10,25 @@
 body{
     background: $negro2;
 }
+
+.boton_azul{
+    color: white;
+    background: $azul;
+    &:hover{
+        background: $azulHover;
+    }
+}
+.boton_gris{
+    background: $grisBoton;
+    color: black;
+    &:hover{
+        background: $grisBotonHover;
+    }
+    margin-left: 2%;
+}
+.boton{
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}

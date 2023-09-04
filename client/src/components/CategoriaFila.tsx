@@ -41,15 +41,15 @@ export function CategoriaFila({ name, description, id_category, color }: Categor
                 <tr className="filas_tabla">
                     <td className='nombre'>{name}</td>
                     <td className='descripcion'>{description}</td>
-                    <td className="editar" onClick={()=>setEditar(false)}>Editar</td>
-                    <td className="remover" onClick={borrar}>Remover</td>
+                    <td className="editar opcion" onClick={()=>setEditar(false)}>Editar</td>
+                    <td className="remover opcion" onClick={borrar}>Remover</td>
                 </tr>
             ) : (
                 <tr className="filas_tabla">
                     <td className='nombre'><input type="text" value={editarTexto.name} onChange={cambiar.name}/></td>
                     <td className='descripcion'><input type="text" value={editarTexto.description} onChange={cambiar.description}/></td>
-                    <td className="editar"><input type="color" value={editarTexto.color} onChange={cambiar.color}/></td>
-                    <td className="remover" onClick={mandar}>Aceptar</td>
+                    <td className="editar opcion"><input type="color" value={editarTexto.color} onChange={cambiar.color}/></td>
+                    <td className="remover opcion" onClick={mandar}>Aceptar</td>
                 </tr>
             )}
         </>

@@ -4,7 +4,7 @@ import { addVideoApi } from '../api/addVideoApi';
 import {useNavigate} from 'react-router-dom';
 import { rutas } from '../utilities/routes';
 import { UseContexto } from '../context';
-
+import '../styles/formulario.scss';
 const initalState: VideosNew = {
   titulo: '',
   link_imagen: '',
@@ -45,6 +45,7 @@ export function AgregarVideo() {
   }
   return (
     <>
+    <h2 className="titulo_formulario">Nuevo Video</h2>
       <form className="formulario formularioVideo" onSubmit={addVideo}>
         <div className="fila">
           <label htmlFor="">Titulo</label>
@@ -71,9 +72,9 @@ export function AgregarVideo() {
           <textarea className="entrada area-texto" value={nuevoVideo.description} onChange={cambiar.description}></textarea>
         </div>
         <div className="area_botones">
-          <button type="submit">Gaurdar</button>
-          <button type="button" onClick={()=>setNuevoVideo(initalState)}>Limpiar</button>
-          <button type='button' onClick={()=>go(rutas.addCategoryRoute)}>Nueva categoría</button>
+          <button type="submit" className='boton boton_azul'>Gaurdar</button>
+          <button type="button" className='boton boton_gris' onClick={()=>setNuevoVideo(initalState)}>Limpiar</button>
+          <button type='button' className='boton boton_azul boton_izquierdo' onClick={()=>go(rutas.addCategoryRoute)}>Nueva categoría</button>
         </div>
       </form>
     </>

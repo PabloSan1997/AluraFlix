@@ -28,6 +28,32 @@
         img{
             margin: auto;
             max-width: 80%;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+@media (max-width:765px){
+    .portada{
+       flex-direction: column;
+        .area{
+           width: 100%;
+           margin: auto;
+            .titulo{
+               margin:10% auto 0 auto; 
+               text-align: center;
+               max-width: 90%;
+            }
+            .descripcion{
+                margin: auto;
+                text-align: center;
+                max-width: 90%;
+            }
+            img{
+                margin:5% auto;
+            }
         }
     }
 }

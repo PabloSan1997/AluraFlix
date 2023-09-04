@@ -45,7 +45,8 @@ type VideosMuestra = {
     link_video: string,
     link_imagen: string,
     description: string,
-    color:string
+    color:string,
+    onSlider:(a:number)=>void
 }
 
 type VideosNew = {

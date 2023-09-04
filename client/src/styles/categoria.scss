@@ -1,0 +1,38 @@
+@import 'colores.scss';
+.tabla{
+    width: 80%;
+    margin:20px auto;
+    border-collapse: collapse;
+    border: 2px solid $azul;
+    color: $gris1;
+    tbody{
+        tr{
+            th{
+                border: 2px solid $azul;
+                font-weight: 500;
+                padding: 2px;
+            }
+            td{
+                border: 1px solid black;
+                padding: 2px;
+                input{
+                    width: 90%;
+                    border: none;
+                    background: $negro3;
+                    color: white;
+                    padding: 2px;
+                    outline: none;
+                    font-size: 1rem;
+                }
+                &.opcion{
+                    text-align: center;
+                    user-select: none;
+                    &:hover{
+                        cursor: pointer;
+                        background-color: rgba(255, 255, 255, 0.048);
+                    }
+                }
+            }
+        }
+    }
+}

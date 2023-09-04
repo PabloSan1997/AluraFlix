@@ -1,8 +1,8 @@
 
-import React from 'react'
+
 import { UseContexto } from '../context'
 import { CategoriaFila } from './CategoriaFila';
-
+import '../styles/categoria.scss';
 
 export  function AreaCategorias() {
     const {categorias} = UseContexto();

@@ -50,20 +50,64 @@
 
         .cuadroVideo {
             margin-left: 2%;
-            width: 300px;
+            width: 320px;
             .slider {
                 display: flex;
                 height: 100%;
                 .video{
                     width: 100%;
-                    height: 100%;
-                    img {
-                        border-radius: 10px;
-                        width:90%;
+                    height: 200px;
+                    position: relative;
+                    .cerrar{
+                        width: 20px;
+                        position: absolute;
+                        z-index: 2;
+                        right: 5%;
+                        top:5%;
+                        color: rgba(255, 252, 252, 0.589);
+                        filter: drop-shadow(0 0 2px rgb(0, 0, 0));
+                        cursor: pointer;
+                        &:hover{
+                            color: white;
+                            filter: drop-shadow(0 0 5px rgb(0, 0, 0));
+                            transform: scale(1.2);
+                        }
+                        &:active{
+                            transform: scale(1);
+                            filter: drop-shadow(0 0 0px rgb(0, 0, 0));
+                        }
+                    }
+                    .imagen{
+                        background-size: cover;
+                        background-position: center;
+                        width: 90%;
+                        height: 90%;
                         margin: auto;
-                        
+                        border-radius: 5px;
+                        position: absolute;
+                        z-index: 1;
+                        top:0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        cursor: pointer;
                     }
                 }
+            }
+        }
+    }
+}
+@media (max-width:582px){
+    .seccion{
+        .area_titulo {
+            flex-direction: column;
+            h2 {
+            width: fit-content;
+            margin: 10% auto 2% 2%;
+            }
+            p {
+               max-width: 95%;
+               margin: 0 auto 2% 2%;
             }
         }
     }
