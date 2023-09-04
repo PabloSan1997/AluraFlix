@@ -1,0 +1,33 @@
+@import 'colores.scss';
+
+.portada{
+    width: 100%;
+    display: flex;
+    background-image: url(https://us.123rf.com/450wm/panychev/panychev1608/panychev160800496/62331409-textura-en-blanco-de-m%C3%A1rmol-fondo-azul-oscuro-y-negro-abstracto-material.jpg);
+    background-size:cover ;
+    background-attachment: fixed;
+    .area{
+        margin: 10% 0 2% 0;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        .titulo{
+            color: white;
+            font-size: 1.9rem;
+            max-width: 80%;
+            margin: auto auto 0 10%;
+            font-weight: 400;
+        }
+        .descripcion{
+            color: white;
+            font-size: 1.2rem;
+            max-width: 90%;
+            margin: 1% auto auto 10%;
+            font-weight: 300;
+        }
+        img{
+            margin: auto;
+            max-width: 80%;
+        }
+    }
+}

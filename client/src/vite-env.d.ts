@@ -39,6 +39,14 @@ type VideosRes = {
     link_imagen: string,
     description: string,
 }
+type VideosMuestra = {
+    id_video: string,
+    titulo: string,
+    link_video: string,
+    link_imagen: string,
+    description: string,
+    color:string
+}
 
 type VideosNew = {
     id_category: string,
@@ -52,6 +60,8 @@ type VideosNew = {
 type Context = {
     actual: () => void,
     categoriaVideos: CategoriesRelationRes[],
-    categorias: CategoriesRes[]
+    categorias: CategoriesRes[],
+    muestra:VideosRes,
+    setMuestra:(a:VideosRes)=>void
 }
 

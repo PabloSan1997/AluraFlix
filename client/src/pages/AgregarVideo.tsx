@@ -31,13 +31,17 @@ export function AgregarVideo() {
 
   const addVideo =(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
+    
     addVideoApi(nuevoVideo)
     .then(data=>{
       console.log(data);
       setNuevoVideo(initalState);
       actual();
     })
-    .catch(error=>console.error(error));
+    .catch(error=>{
+      console.error(error);
+      alert(error);
+    });
   }
   return (
     <>

@@ -1,3 +1,4 @@
+import { Portada } from "../components/Portada";
 import { SeccionCategory } from "../components/SeccionCategory";
 import { UseContexto } from "../context"
 
@@ -5,12 +6,15 @@ import { UseContexto } from "../context"
 
 
 export function Home() {
-  const {categoriaVideos} = UseContexto();
+  const { categoriaVideos } = UseContexto();
   return (
-    <div className="videos">
-      {categoriaVideos.map(elemetno=>(
-        <SeccionCategory key={elemetno.id_category} {...elemetno}/>
-      ))}
-    </div>
+    <>
+      <Portada />
+      <div className="videos">
+        {categoriaVideos.map(elemetno => (
+          <SeccionCategory key={elemetno.id_category} {...elemetno} />
+        ))}
+      </div>
+    </>
   )
 }

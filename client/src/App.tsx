@@ -4,6 +4,7 @@ import { AgregarVideo } from './pages/AgregarVideo';
 import { AgregarCategoria } from './pages/AgregarCategoria';
 import { rutas } from './utilities/routes';
 import Header from './components/Header';
+import { Footer } from './components/footer';
 
 const Rutas =()=>useRoutes([
     {
@@ -35,6 +36,7 @@ export function App(){
         <HashRouter>
             <Header/>
             <Rutas/>
+            <Footer/>
         </HashRouter>
     );
 }

@@ -1,0 +1,12 @@
+@import 'colores.scss';
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid $azul;
+    img{
+        width: 200px;
+        margin-top: 2%;
+        margin-bottom: 50px;
+    }
+}
