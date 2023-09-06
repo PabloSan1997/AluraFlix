@@ -1,0 +1,23 @@
+.loading{
+    width: 100%;
+    margin-top: 100px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .cargar{
+        width: 200px;
+        height: 200px;
+        border: 5px solid rgb(14, 14, 41);
+        border-radius: 100%;
+        border-top:5px solid rgb(14, 14, 243);
+        animation: cargar 1s linear  infinite;
+    }
+}
+@keyframes cargar{
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}

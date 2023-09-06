@@ -1,42 +1,48 @@
-import {useRoutes, HashRouter, Navigate} from 'react-router-dom';
+import { useRoutes, HashRouter, Navigate } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { AgregarVideo } from './pages/AgregarVideo';
 import { AgregarCategoria } from './pages/AgregarCategoria';
 import { rutas } from './utilities/routes';
 import Header from './components/Header';
 import { Footer } from './components/footer';
+import { UseContexto } from './context';
+import { Loading } from './components/Loading';
 
-const Rutas =()=>useRoutes([
+const Rutas = () => useRoutes([
     {
-        path:rutas.homePage,
-        element:<Home/>
+        path: rutas.homePage,
+        element: <Home />
     },
     {
-        path:rutas.addVideoRoute,
-        element:<AgregarVideo/>
+        path: rutas.addVideoRoute,
+        element: <AgregarVideo />
     },
     {
-        path:rutas.addCategoryRoute,
-        element:<AgregarCategoria/>
+        path: rutas.addCategoryRoute,
+        element: <AgregarCategoria />
     },
     {
-        path:'*',
-        element:<p>Not found</p>
+        path: '*',
+        element: <p>Not found</p>
     },
     {
-        path:'/',
-        element:<Navigate to={rutas.homePage}/>
+        path: '/',
+        element: <Navigate to={rutas.homePage} />
     }
 ]);
 
 
-export function App(){
-    
-    return(
+export function App() {
+    const { loading } = UseContexto();
+    return (
         <HashRouter>
-            <Header/>
-            <Rutas/>
-            <Footer/>
+            {loading ? <Loading /> : (
+                <>
+                    <Header />
+                    <Rutas />
+                    <Footer />
+                </>
+            )}
         </HashRouter>
     );
 }

@@ -17,6 +17,7 @@ export function Provedor({children}:Children){
     const [actualizar, setActualizar] = React.useState<boolean>(false);
     const [categorias, setCategorias] = React.useState<CategoriesRes[]>([]);
     const [muestra, setMuestra] = React.useState<VideosRes>(initlaState);
+    const [loading, setLoading] = React.useState(true);
     const actual=()=>{
         setActualizar(!actualizar);
     }
@@ -25,6 +26,7 @@ export function Provedor({children}:Children){
         readCategoryRelation()
         .then(data=>{
             setCategoriaVideos(data);
+            setLoading(false);
             if(data.length>0){
                 const inicio = data[0];
                 const video = inicio.videos;
@@ -36,6 +38,7 @@ export function Provedor({children}:Children){
         .catch((error)=>{
             console.error(error);
             setCategoriaVideos([]);
+            alert('No se pueden cargar los datos');
         });
     },[actualizar]);
 
@@ -54,7 +57,9 @@ export function Provedor({children}:Children){
             categoriaVideos,
             categorias,
             muestra,
-            setMuestra
+            setMuestra,
+            loading,
+            setLoading
         }}>
             {children}
         </Contexto.Provider>

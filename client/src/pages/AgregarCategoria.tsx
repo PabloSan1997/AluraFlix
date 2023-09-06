@@ -18,12 +18,13 @@ export function AgregarCategoria() {
     description:(e:React.ChangeEvent<HTMLTextAreaElement>)=>setNewCategory({...newCategory, description:e.target.value}),
     color:(e:React.ChangeEvent<HTMLInputElement>)=>setNewCategory({...newCategory, color:e.target.value})
   }
-  const {actual} = UseContexto();
+  const {actual, setLoading} = UseContexto();
   const agregar = (e: React.FormEvent<HTMLFormElement>) =>{
     e.preventDefault();
     addCategory(newCategory)
     .then(data=>{
       console.log(data);
+      setLoading(true);
       actual();
       setNewCategory(initalState);
     })

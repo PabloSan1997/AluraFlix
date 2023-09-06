@@ -17,7 +17,7 @@ export function AgregarVideo() {
   
   const [nuevoVideo, setNuevoVideo] = React.useState<VideosNew>(initalState);
   const go = useNavigate();
-  const {categorias, actual} = UseContexto();
+  const {categorias, actual, setLoading} = UseContexto();
   const cambiar = {
     titulo: (e: React.ChangeEvent<HTMLInputElement>) => setNuevoVideo({ ...nuevoVideo, titulo: e.target.value }),
     link_imagen: (e: React.ChangeEvent<HTMLInputElement>) => setNuevoVideo({ ...nuevoVideo, link_imagen: e.target.value }),
@@ -35,6 +35,7 @@ export function AgregarVideo() {
     addVideoApi(nuevoVideo)
     .then(data=>{
       console.log(data);
+      setLoading(true);
       setNuevoVideo(initalState);
       actual();
     })

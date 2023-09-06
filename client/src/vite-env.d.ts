@@ -63,6 +63,8 @@ type Context = {
     categoriaVideos: CategoriesRelationRes[],
     categorias: CategoriesRes[],
     muestra:VideosRes,
-    setMuestra:(a:VideosRes)=>void
+    setMuestra:(a:VideosRes)=>void,
+    loading:boolean,
+    setLoading:(a:boolean)=>void
 }
 
